@@ -7,23 +7,9 @@ import { logger } from "./lib/logger";
 const app: Express = express();
 
 app.use(
-import pinoHttp from 'pino-http';
-    logger,
-    serializers: {
-      req(any) {
-        return {
-          id: req.id,
-          method: req.method,
-          url: req.url?.split("?")[0],
-        };
-      },
-      res(any) {
-        return {
-          statusCode: res.statusCode,
-        };
-      },
-    },
-  }),
+app.use((req: any, res: any, next: any) => {
+  next();
+});
 );
 app.use(cors());
 app.use(express.json());
