@@ -6,11 +6,9 @@ import { logger } from "./lib/logger";
 
 const app: Express = express();
 
-app.use(
 app.use((req: any, res: any, next: any) => {
   next();
 });
-);
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
