@@ -1,2 +1,5 @@
 import app from '../dist/index.mjs';
-export default app;
+
+export default function handler(req, res) {
+  return app(req, res);
+}
